@@ -6,6 +6,7 @@ $(document).ready(function () {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $(".portfolio-card").removeClass("show-card slide-from-bottom slide-from-right slide-from-top slide-from-left");
 
         if (index < currentIndex) {
@@ -17,6 +18,10 @@ $(document).ready(function () {
         }
 
         currentIndex = index;
+=======
+        $(".portfolio-card").hide();
+        $(".portfolio-card:eq(" + index + ")").show();
+>>>>>>> parent of 97736ed (Update script.js)
 =======
         $(".portfolio-card").hide();
         $(".portfolio-card:eq(" + index + ")").show();
