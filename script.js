@@ -3,8 +3,18 @@ $(document).ready(function () {
     var totalCards = $(".portfolio-card").length;
 
     function showCard(index) {
-        $(".portfolio-card").hide();
-        $(".portfolio-card:eq(" + index + ")").show();
+        $(".portfolio-card").removeClass("show-card");
+
+        // Dodaj klasę animacji w zależności od indeksu
+        if (index < currentIndex) {
+            $(".portfolio-card:eq(" + index + ")").addClass("slide-from-left show-card");
+        } else if (index > currentIndex) {
+            $(".portfolio-card:eq(" + index + ")").addClass("slide-from-right show-card");
+        } else {
+            $(".portfolio-card:eq(" + index + ")").addClass("show-card");
+        }
+
+        currentIndex = index;
     }
 
     // Obsługa strzałki w lewo
