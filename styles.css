@@ -1,1 +1,45 @@
+.portfolio-card {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
 
+/* Colors for individual cards */
+#card1 {
+    background-color: #ADD8E6; /* Light Blue */
+}
+
+#card2 {
+    background-color: #FFA500; /* Orange */
+}
+
+#card3 {
+    background-color: #800080; /* Purple */
+}
+
+#card4 {
+    background-color: #008000; /* Green */
+}
+
+/* Animation classes */
+.slide-from-bottom {
+    transform: translateY(100%);
+}
+
+.slide-from-right {
+    transform: translateX(100%);
+}
+
+.slide-from-top {
+    transform: translateY(-100%);
+}
+
+.slide-from-left {
+    transform: translateX(-100%);
+}
+
+.show-card {
+    transform: translate(0, 0);
+}
