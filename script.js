@@ -3,6 +3,7 @@ $(document).ready(function () {
     var totalCards = $(".portfolio-card").length;
 
     function showCard(index) {
+<<<<<<< HEAD
         $(".portfolio-card").removeClass("show-card slide-from-bottom slide-from-right slide-from-top slide-from-left");
 
         if (index < currentIndex) {
@@ -14,6 +15,10 @@ $(document).ready(function () {
         }
 
         currentIndex = index;
+=======
+        $(".portfolio-card").hide();
+        $(".portfolio-card:eq(" + index + ")").show();
+>>>>>>> parent of 97736ed (Update script.js)
     }
 
     $(document).keydown(function (e) {
