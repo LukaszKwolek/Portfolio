@@ -3,9 +3,8 @@ $(document).ready(function () {
     var totalCards = $(".portfolio-card").length;
 
     function showCard(index) {
-        $(".portfolio-card").removeClass("show-card");
+        $(".portfolio-card").removeClass("show-card slide-from-bottom slide-from-right slide-from-top slide-from-left");
 
-        // Dodaj klasę animacji w zależności od indeksu
         if (index < currentIndex) {
             $(".portfolio-card:eq(" + index + ")").addClass("slide-from-left show-card");
         } else if (index > currentIndex) {
@@ -17,23 +16,20 @@ $(document).ready(function () {
         currentIndex = index;
     }
 
-    // Obsługa strzałki w lewo
     $(document).keydown(function (e) {
-        if (e.which === 37) { // 37 to kod strzałki w lewo
+        if (e.which === 37) {
             currentIndex = (currentIndex - 1 + totalCards) % totalCards;
             showCard(currentIndex);
         }
     });
 
-    // Obsługa strzałki w prawo
     $(document).keydown(function (e) {
-        if (e.which === 39) { // 39 to kod strzałki w prawo
+        if (e.which === 39) {
             currentIndex = (currentIndex + 1) % totalCards;
             showCard(currentIndex);
         }
     });
 
-    // Obsługa kręcenia kółkiem myszki
     $(document).on("wheel", function (e) {
         if (e.originalEvent.deltaY > 0) {
             currentIndex = (currentIndex + 1) % totalCards;
@@ -43,6 +39,5 @@ $(document).ready(function () {
         showCard(currentIndex);
     });
 
-    // Pokaż pierwszą kartę na starcie
     showCard(currentIndex);
 });
